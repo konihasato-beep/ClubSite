@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+.te-ma {
+    font-family: NSimSun, serif;
+    font-size: 5vw;
+    text-align: center;
+    margin-top: 80px;
+    font-style: italic;
+}
+
+.waku1 {
+    margin: 0 10vw;
+    color: #000;
+    background: #fff;
+    border: solid 3px #8d8d8d;
+    border-radius: 10px;
+}
+
+.bun1 {
+    margin: 10px;
+    font-size: clamp(14px, 2.7vw, 30px);
+}
+
+.link {
+    margin-left: 60%;
+    margin-right: 20px;
+    font-size: clamp(13px, 2vw, 20px);
+}
+
+span {
+    display: inline-block;
+}
+
+a[href^="ht"]:hover {
+    color: #ff0000;
+}
+
+.botan {
+    width: 120px;
+    margin: 10px auto 0;
+    text-align: center;
+}
+
+    .botan button {
+        cursor: pointer;
+    }
+
+.waku2:hover {
+    background-color: #9e9e9e;
+}
+
+.bun2 {
+    font-size: 100%;
+    margin: 10px;
+}

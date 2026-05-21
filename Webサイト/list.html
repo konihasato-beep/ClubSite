@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>list</title>
+    <meta name="description" content="title">
+    <link rel="stylesheet" href="./assets/css/sanitize.css">
+    <link rel="stylesheet" href="./assets/css/list.css">
+    <link rel="icon" type="image/png" href="./assets/faviconSee/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./assets/faviconSee/favicon.svg" />
+    <link rel="shortcut icon" href="./assets/faviconSee/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/faviconSee/apple-touch-icon.png" />
+    <link rel="manifest" href="./assets/faviconSee/site.webmanifest" />
+
+</head>
+<body>
+    <h2 class="bun1"><span>こちらは愛好会紹介</span><span>閲覧ページです</span></h2>
+   
+    <div class="flex">
+        <input type="radio" id="option1" name="option" checked>
+        <label for="option1" class="lavel" >一覧</label>
+        <input type="radio" id="option2" name="option">
+        <label for="option2" class="lavel">作成</label>
+        <div id="waku-itiran"> 
+            <div class="waku_all">
+                <button id="waku3">
+                    <a class="namae" href="mcc.html">MCC</a>
+                </button> 
+ 
+                <button id="titleHeading">
+                    No_title
+                </button>
+                <!-- モーダルウィンドウ -->
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <p>閲覧?作成?</p>
+                        <button id="redirectButton" class="disabled" disabled>
+                            閲覧
+                        </button>
+
+                        <button onclick="location.href='maker.html'">
+                            作成
+                        </button>
+                    </div>
+                </div>
+                <button id="waku5">
+                    No_title
+                </button>
+            <!-- モーダルウィンドウ -->
+            <div id="myModal1" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>閲覧?作成?</p>
+                    <button id="redirectButton1" class="disabled" disabled>
+                        閲覧
+                    </button>
+
+                    <button onclick="location.href='maker.html'">
+                        作成
+                    </button>
+                </div>
+            </div>
+                <button id="waku6">
+                    No_title
+                </button>
+
+                    <!-- モーダルウィンドウ -->
+                <div id="myModal2" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <p>閲覧?作成?</p>
+                        <button id="redirectButton2" class="disabled" disabled>
+                             閲覧
+                        </button>
+
+                        <button onclick="location.href='maker.html'">
+                            作成
+                        </button>
+                    </div>
+                </div>
+                <button id="waku7">
+                    No_title
+                </button> 
+                <button id="waku8">
+                    No_title
+                </button>
+                <button id="waku9">
+                    No_title
+                </button>
+            </div>
+            <div id="sticky">No signal..</div>
+            
+        </div> 
+
+        <div id="waku-sakusei">
+            <h1 class="odai">サイト作成ツール</h1>
+            <form id="posterForm">
+                <label for="title" class="naiyo">&ensp;タイトル：</label>
+                <input type="text" id="title" name="title" placeholder="例:mcc"><br><br>
+                
+                <label for="catchcopy1" class="naiyo">キャッチコピー：</label>
+                <textarea id="catchcopy1" name="catchcopy1" placeholder="例:特徴など"></textarea><br><br>
+                
+                <label for="basyo" class="naiyo">活動内容：</label>
+                <textarea id="basyo" name="basyo" placeholder="例:普段行っていることなど"></textarea><br><br>
+                
+                <label for="place" class="naiyo">活動場所：</label>
+                <textarea id="place" name="place" placeholder="例:○○教室"></textarea><br><br>
+
+                <label for="zisseki" class="naiyo">実績・作品紹介：</label>
+                <textarea id="zisseki" name="zisseki" placeholder="例:過去の活動など"></textarea><br><br>
+
+                <label for="sonota" class="naiyo">その他：</label>
+                <textarea id="sonota" name="sonota" placeholder="例:連絡先など"></textarea><br><br>
+
+                <button type="button" onclick="generatePoster()">ポスター生成</button>
+                <button type="button" onclick="downloadPoster()">ダウンロード</button>
+            </form>
+            
+            <div class="poster" id="poster">
+                <div class="title" id="posterTitle">タイトル</div>
+                
+                <div id="top"></div>
+                <br>
+                <h6 class="catchcopy1" id="posterContent">-キャッチコピー-</h6>
+                <br>
+                <div class="page">
+                    <a href="#top">&thinsp;Page<br>&thinsp;Top</a>
+                </div>
+                
+                <div class="waku">
+                    <p class="mokuzi">目次</p>
+                    <label for="tocopen">
+                        <div class="waku2">></div>
+                    </label>
+                    
+                    <input id="tocopen" type="checkbox">
+                 
+                 <ol class="mo">
+                     <li class="nakami"><a href="#aida1">活動内容</a></li>
+                     <li class="nakami"><a href="#tobuyo">活動場所</a></li>
+                     <li class="nakami"><a href="#tobuyo2">実績・作品紹介</a></li>
+                     <li id="aida1"><a href="#tobuyo3">その他</a></li>
+                 </ol>
+                </div>
+                <br>
+                <br><br><br><div id="aida"></div>
+                <div class="towa2">
+                    <div class="kugiri">
+                        <h5 class="midasi1">1.活動内容</h5>
+                    </div>
+                    
+                    <br>
+                    <p class="towa" id="towa">ここに説明文</p>
+                    
+                    <p class="towa" id="tobuyo"> </p>
+                    <p class="rinku">八戸高専については<span><a href="https://www.hachinohe-ct.ac.jp/">こちら</a></span></p>
+                </div>
+                <br><br><br>
+                <div class="tuno">
+                    <div class="kugiri">
+                        <h5 id="midasi2">2.活動場所</h5>
+                    </div>
+                    <p class="towa" id="place2">ここに説明文</p>
+                </div>
+                <p id="tobuyo2"> </p>
+            
+                <div class="syoukai">
+                    <div class="kugiri">
+                        <h5 class="midasi3" >3.実績・作品紹介</h5>
+                    </div>
+                    <p class="towa" id="zisseki2">ここに説明文</p>
+                </div><br><br><br>
+                <div id="tobuyo2"></div><br><br>
+                <div class="kokuti">
+                    <div class="kugiri">
+                        <h5 class="midasi4" >4.その他</h5>
+                    </div>
+                    <p class="towa" id="sonota2">ここに説明文</p>
+                </div>
+                <div id="tobuyo3"></div><br><br>
+            </div>
+            <div class="maru">
+                <a href="#">↑</a>
+            </div>
+        
+        </div>
+    </div>
+    <script type="text/javascript">
+        const waku3 = document.getElementById('waku3');
+        const sticky = document.getElementById('sticky');
+     
+        waku3.addEventListener('mouseover', function() {
+            sticky.style.backgroundImage = 'url(assets/images/mccsite.png)';
+            sticky.style.backgroundSize = 'cover';
+            sticky.style.fontSize = '0px';
+        });
+     
+        waku3.addEventListener('mouseleave', function() {
+            sticky.style.backgroundImage = 'none';
+            sticky.style.fontSize = '';
+        });
+    </script>
+
+    <script>
+        function generatePoster() {
+            const title = document.getElementById('title').value;
+            const content = document.getElementById('catchcopy1').value;
+            const basyo = document.getElementById('basyo').value;
+            const place = document.getElementById('place').value;
+            const zisseki = document.getElementById('zisseki').value;
+            const sonota = document.getElementById('sonota').value;
+
+            document.getElementById('posterTitle').innerText = title;
+            document.getElementById('posterContent').innerText = content;
+            document.getElementById('towa').innerText = basyo;
+            document.getElementById('place2').innerText = place;
+            document.getElementById('zisseki2').innerText = zisseki;
+            document.getElementById('sonota2').innerText = sonota;
+        }
+        function downloadPoster() { 
+            var posterContent = document.getElementById("poster").outerHTML; 
+            var htmlContent = `
+             <!DOCTYPE html> 
+             <html lang="ja"> 
+             <head> 
+                <meta charset="UTF-8"> 
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+                <link rel="stylesheet" href="./assets/css/list.css">
+                <title>生成されたポスター</title> 
+                <style>
+                        body{
+    background-attachment: fixed;
+    background-color: #e0e0e0; 
+}              
+body {
+    width: 1400px;
+    margin: 0 auto;
+    zoom: 1.0;
+}
+
+    .kugiri{
+    border: solid 2px rgb(106, 106, 106);
+    padding: 1em;
+    background-color:  rgb(106, 106, 106);
+    margin-left: 10%;
+    margin-right: 10%;
+    max-height: 80px;
+    min-height: 50px;
+    height: 11vw;
+
+}
+.midasi1,#midasi2,.midasi3,.midasi4{
+    font-size: clamp(20px,5vw,40px);
+    margin-top: -5px;
+    z-index: 1;
+    margin-bottom: 0px;
+    
+    letter-spacing: 0.3px;
+}
+    .title{
+            position: relative;
+            margin-top: 50px;
+            margin-bottom: 10px;
+            font-size: 100px;
+            letter-spacing: 7px;
+            font-family: NSimSun,serif;
+            text-align: center;
+            top: 70px;
+            width: 100%;
+        }
+            .kokuti{
+    position: relative;
+    background-color: rgb(198, 198, 198);
+    /*padding-bottom: 20px;*/
+}
+.content{
+    font-size: 20px;
+}
+.box {
+  /*  position: absolute;*/
+    position: fixed;
+    width: 100%;
+    
+    padding-top: 10%;
+    background   : linear-gradient(to bottom, #000000, #e0e0e0);
+    margin-right: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 9;
+
+
+}
+
+.page{
+    position: fixed;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10%;
+    border-radius: 10px;
+    border: #ffffff solid 1px;
+    font-size: 100%;
+    width: 45px;
+    background-color: #ffffff;
+    bottom: 30px;
+    text-align: left;
+    user-select: none;
+    z-index: 3;
+}
+
+.catchcopy1{
+    padding-top: 30px;
+    margin-left: 14%;
+    margin-right: 10%;
+    color: rgb(0, 0, 0);
+    font-size: 6vw;
+    font-family: NSimSun,serif;
+    font-style: italic;
+    letter-spacing: 0.4em;
+    font-weight: bold;
+    margin-bottom: 50px;
+    
+
+}
+.waku{
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10%;
+    border-radius: 10px;
+    border: #000000 solid 2px;
+    font-size: 100%;
+  
+    padding-bottom: 10px;
+    padding-left: 10px;
+    max-width: 500px;
+    min-width: 250px;
+    margin: auto;
+    margin-left: 10vw;
+    margin-right: 10vw;   
+}
+.nakami{
+    color: #000000;
+}
+/* <div class="waku"> <p class="mo">mokuzi</p></div>*/
+.waku input[type="checkbox"]{
+    display: none;
+}
+#tocopen:checked+.mo {
+    display: none;
+}
+#tocopen:checked+.waku2 {
+    transform: rotate(-30deg);
+}
+.waku2{
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10%;
+    border-radius: 10px;
+    border:   #e0e0e0 solid 1px;
+    font-size: 100%;
+    width: 28px;
+    background-color: #ffffff;
+    margin-left: 60px;
+    margin-top: -48px;
+    font-family: NSimSun,serif;
+    user-select: none;
+    cursor: pointer;
+}
+.mokuzi{
+    color: #000000;
+    font-size: 20px;
+    margin-top: 5px;
+}
+.mo{
+    font-size: clamp(20px,3vw,30px);
+    letter-spacing: 0.2em;
+    margin-left: 30px;
+    line-height: 2em;
+    color: #000000;
+}
+.waku2:hover{
+    background-color: #9e9e9e;
+}
+
+.kugiri{
+    border: solid 2px rgb(106, 106, 106);
+    padding: 1em;
+    background-color:  rgb(106, 106, 106);
+    margin-left: 10%;
+    margin-right: 10%;
+    max-height: 80px;
+    min-height: 50px;
+    height: 11vw;
+
+}
+.midasi1,#midasi2,.midasi3,.midasi4{
+    font-size: clamp(20px,5vw,40px);
+    margin-top: -5px;
+    z-index: 1;
+    margin-bottom: 0px;
+    
+    letter-spacing: 0.3px;
+}
+/*
+.sankaku{
+    border: solid 2px rgb(106, 106, 106);
+    padding: 1em;
+    background-color:  rgb(106, 106, 106);
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 4vw;
+    max-width: 30px;
+    max-height: 30px;
+    width: 4vw;
+    transform: rotate(-45deg);
+    margin-top: -40px;
+    margin-left: 140px;
+    position: absolute;
+    
+}*/
+.towa{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 40px;
+    font-size: clamp(16px,3vw,20px);
+}
+.rinku{
+    margin-left: 60%;
+}
+span{
+    display: inline-block;
+}
+/*a:hover{
+    color: rgb(60, 0, 255);
+
+}*/
+.towa2{
+    background-color: rgb(198, 198, 198);
+    padding-bottom: 20px;
+}
+
+a[href^="#"]{
+    color: #000000;
+    text-decoration: none;
+}
+a[href^="#"]:hover{
+    color: #9e9e9e;
+}
+a[href^="ht"]:hover{
+    color: #ff0000;
+}
+.tuno{
+    position: relative;
+    background-color: rgb(198, 198, 198);
+    padding-bottom: 20px;
+}
+.sentaku-group{
+    background-color:  rgb;
+    position: relative;
+    margin-left: 8%;
+    margin-right: 4%;
+    
+}
+.ti-mu1{
+    position: absolute;
+    font-size: clamp(10px,10vw,70px);
+    font-family: NSimSun,serif;
+    margin-left: 20%;
+    padding-top: 0px;
+    color: #ffffff;   
+    margin-top: 5vw; 
+    user-select: none;
+}
+.syoukai{
+    position: relative;
+    background-color: rgb(198, 198, 198);
+    padding-bottom: 20px;
+}
+.midasi3-1,.midasi3-2{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-right: 0px;
+    font-size: clamp(15px,3vw,30px);
+}
+
+                </style>
+            </head> 
+            <body> 
+                ${posterContent} 
+            </body> 
+            </html>`; 
+            const blob = new Blob([htmlContent], { type: 'text/html' }); 
+            const link = document.createElement('a'); 
+            link.href = URL.createObjectURL(blob); 
+            link.download = 'generated_poster.html'; 
+            link.click();
+        }
+    </script>
+
+    <script>
+        // モーダルを開くボタン
+        const openModalButton = document.getElementById('titleHeading');
+        // モーダルそのもの
+        const modal = document.getElementById('myModal');
+        // モーダルを閉じる<span>要素
+        const closeSpan = document.getElementsByClassName('close')[0];
+
+        // ボタンをクリックしてモーダルを表示する
+        openModalButton.addEventListener('click', () => {
+            modal.style.display = 'block';
+        });
+
+        // <span>要素をクリックしてモーダルを閉じる
+        closeSpan.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        // モーダルの外側をクリックしてモーダルを閉じる
+        window.addEventListener('click', (event) => {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+
+
+    <script>
+        // モーダルを開くボタン
+        const openModalButton1 = document.getElementById('waku5');
+        // モーダルそのもの
+        const modal1 = document.getElementById('myModal1');
+        // モーダルを閉じる<span>要素
+        const closeSpan1 = document.getElementsByClassName('close')[0];
+
+        // ボタンをクリックしてモーダルを表示する
+        openModalButton1.addEventListener('click', () => {
+            modal1.style.display = 'block';
+        });
+
+         // <span>要素をクリックしてモーダルを閉じる
+        closeSpan1.addEventListener('click', () => {
+            modal1.style.display = 'none';
+        });
+
+        // モーダルの外側をクリックしてモーダルを閉じる
+        window.addEventListener('click', (event) => {
+            if (event.target == modal1) {
+                modal1.style.display = 'none';
+            }
+        });
+    </script>
+
+<script>
+    // モーダルを開くボタン
+    const openModalButton2 = document.getElementById('waku6');
+    // モーダルそのもの
+    const modal2 = document.getElementById('myModal2');
+    // モーダルを閉じる<span>要素
+    const closeSpan2 = document.getElementsByClassName('close')[0];
+
+    // ボタンをクリックしてモーダルを表示する
+    openModalButton2.addEventListener('click', () => {
+        modal2.style.display = 'block';
+    });
+
+     // <span>要素をクリックしてモーダルを閉じる
+    closeSpan2.addEventListener('click', () => {
+        modal2.style.display = 'none';
+    });
+
+    // モーダルの外側をクリックしてモーダルを閉じる
+    window.addEventListener('click', (event) => {
+        if (event.target == modal1) {
+            modal2.style.display = 'none';
+        }
+    });
+</script>
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const redirectButton = document.getElementById('redirectButton');
+            const customLink = localStorage.getItem('customLink');
+
+            if (customLink) {
+                redirectButton.disabled = false;
+                redirectButton.classList.remove('disabled');
+                redirectButton.addEventListener('click', function() {
+                    window.location.href = customLink;
+               });
+            } else {
+                redirectButton.disabled = true;
+                redirectButton.classList.add('disabled');
+            }
+        });
+    </script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+           
+            const titleHeading = document.getElementById('titleHeading');
+            const savedTitle = localStorage.getItem('pageTitle');
+
+            if (savedTitle) {
+               
+                titleHeading.textContent = savedTitle;
+            }
+        });
+    </script>
+</body>
+</html>

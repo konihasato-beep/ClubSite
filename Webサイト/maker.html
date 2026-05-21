@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>リンク入力</title>
+</head>
+<body>
+    <style>
+        body{
+            background-color: rgb(212, 212, 212);
+        }
+        .taitol{
+            font-family: NSimSun,serif;
+            font-size: 40px;
+            text-align: center;
+        }
+        #linkForm{
+            text-align: center;
+            font-family: NSimSun,serif;
+            font-size: 20px;
+        }
+        #titleForm{
+            text-align: center;
+            font-family: NSimSun,serif;
+            font-size: 20px;
+        }
+    </style>
+    <h3 class="taitol">こちらは作成ページです</h3>
+    <br>
+    <form id="linkForm">
+        <label for="customLink">リンクを入力してください:</label>
+        <input type="text" id="customLink" placeholder="example.html">
+        <button type="submit">送信</button>
+    </form>
+<br><br>
+    <form id="titleForm">
+        <label for="pageTitle">タイトルを入力してください:</label>
+        <input type="text" id="pageTitle" placeholder="例: 愛好会の名前">
+        <button type="submit">送信</button>
+    </form>
+
+    <script>
+        document.getElementById('titleForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const pageTitle = document.getElementById('pageTitle').value;
+            if (pageTitle) {
+                localStorage.setItem('pageTitle', pageTitle);
+                alert('タイトルが保存されました！');
+            } else {
+                alert('有効なタイトルを入力してください。');
+            }
+        });
+    </script>
+    <script>
+        document.getElementById('linkForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const customLink = document.getElementById('customLink').value;
+            if (customLink) {
+                localStorage.setItem('customLink', customLink);
+                alert('リンクが保存されました！');
+            } else {
+                alert('有効なリンクを入力してください。');
+            }
+        });
+    </script>
+</body>
+</html>
